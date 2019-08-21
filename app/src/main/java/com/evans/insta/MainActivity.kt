@@ -19,20 +19,16 @@ class MainActivity : AppCompatActivity() {
         when (item.itemId) {
             R.id.nav_home -> {
                 selectedFragment = HomeFragment()
-                Log.d("SELECTED", "Home Fragment")
             }
             R.id.nav_search -> {
                 selectedFragment = SearchFragment()
-                Log.d("SELECTED", "Search Fragment")
             }
             R.id.nav_add -> {
                 return@OnNavigationItemSelectedListener true
             }R.id.nav_notifications -> {
                 selectedFragment = NotificationFragment()
-            Log.d("SELECTED", "Notifications Fragment")
             }R.id.nav_profile -> {
                 selectedFragment = ProfileFragment()
-            Log.d("SELECTED", "Profile Fragment")
             }
         }
         if(selectedFragment != null){
