@@ -13,30 +13,27 @@ import com.evans.insta.fragments.SearchFragment
 
 class MainActivity : AppCompatActivity() {
 
-    private var selectedFragment : Fragment? = null
-
     private val onNavigationItemSelectedListener = BottomNavigationView.OnNavigationItemSelectedListener { item ->
         when (item.itemId) {
             R.id.nav_home -> {
-                selectedFragment = HomeFragment()
+                moveToFragment(HomeFragment())
+                return@OnNavigationItemSelectedListener true
             }
             R.id.nav_search -> {
-                selectedFragment = SearchFragment()
+                moveToFragment(SearchFragment())
+                return@OnNavigationItemSelectedListener true
             }
             R.id.nav_add -> {
                 return@OnNavigationItemSelectedListener true
             }R.id.nav_notifications -> {
-                selectedFragment = NotificationFragment()
+            moveToFragment(NotificationFragment())
+            return@OnNavigationItemSelectedListener true
             }R.id.nav_profile -> {
-                selectedFragment = ProfileFragment()
+            moveToFragment(ProfileFragment())
+            return@OnNavigationItemSelectedListener true
             }
         }
-        if(selectedFragment != null){
-            supportFragmentManager
-                .beginTransaction()
-                .replace(R.id.fragment_container, selectedFragment!!)
-                .commit()
-        }
+
         false
     }
 
@@ -48,10 +45,13 @@ class MainActivity : AppCompatActivity() {
 
         navView.setOnNavigationItemSelectedListener(onNavigationItemSelectedListener)
 
-        supportFragmentManager
-            .beginTransaction()
-            .replace(R.id.fragment_container, HomeFragment())
-            .addToBackStack(null)
-            .commit()
+        moveToFragment(HomeFragment())
+    }
+
+    private fun  moveToFragment(fragment : Fragment){
+        val fragmentTrans = supportFragmentManager.beginTransaction()
+        fragmentTrans.replace(R.id.fragment_container, fragment)
+        fragmentTrans.addToBackStack(null)
+        fragmentTrans.commit()
     }
 }

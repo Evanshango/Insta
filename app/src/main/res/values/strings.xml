@@ -18,4 +18,18 @@
     <string name="full_name">Full name</string>
     <string name="bio">Bio</string>
     <string name="notifications">Notifications</string>
+    <string name="change_profile_photo">Change Profile Photo</string>
+    <string name="name">Name</string>
+    <string name="website">Website</string>
+    <string name="private_information">Private Information</string>
+    <string name="switch_to_professional_account">Switch to Professional Account</string>
+    <string name="e_mail_address">E-mail Address</string>
+    <string name="test_test_com">test@test.com</string>
+    <string name="confirm">Confirm</string>
+    <string name="phone_number">Phone number</string>
+    <string name="_254712345678">+254712345678</string>
+    <string name="account_edit_profile">Edit Profile</string>
+    <string name="delete_account">Delete Account</string>
+    <string name="sign_out">Sign Out</string>
+    <string name="account_bio">Bio</string>
 </resources>
