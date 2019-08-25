@@ -6,9 +6,6 @@
     <string name="title_notifications">Notifications</string>
     <string name="title_add">Add post</string>
     <string name="title_profile">Profile</string>
-
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="username">Username</string>
     <string name="_0">0</string>
     <string name="posts">Posts</string>
@@ -32,4 +29,10 @@
     <string name="delete_account">Delete Account</string>
     <string name="sign_out">Sign Out</string>
     <string name="account_bio">Bio</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="login">Login</string>
+    <string name="need_an_account">Need an Account? Sign Up</string>
+    <string name="already_have_an_account_sign_in">Already have an Account? Sign In</string>
+    <string name="register">Register</string>
 </resources>
