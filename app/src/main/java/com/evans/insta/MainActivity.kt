@@ -1,5 +1,6 @@
 package com.evans.insta
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import com.google.android.material.bottomnavigation.BottomNavigationView
@@ -10,6 +11,7 @@ import com.evans.insta.fragments.HomeFragment
 import com.evans.insta.fragments.NotificationFragment
 import com.evans.insta.fragments.ProfileFragment
 import com.evans.insta.fragments.SearchFragment
+import com.google.firebase.auth.FirebaseAuth
 
 class MainActivity : AppCompatActivity() {
 
@@ -53,5 +55,13 @@ class MainActivity : AppCompatActivity() {
         fragmentTrans.replace(R.id.fragment_container, fragment)
         fragmentTrans.addToBackStack(null)
         fragmentTrans.commit()
+    }
+
+    override fun onStart() {
+        super.onStart()
+        if (FirebaseAuth.getInstance().currentUser == null) {
+            finish()
+            startActivity(Intent(this@MainActivity, SignInActivity::class.java))
+        }
     }
 }

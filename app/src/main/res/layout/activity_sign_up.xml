@@ -55,7 +55,7 @@
                 android:padding="10dp" />
 
         <EditText
-                android:id="@+id/sign_in_password"
+                android:id="@+id/sign_up_password"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/sign_up_email"
@@ -68,8 +68,8 @@
                 android:id="@+id/btn_register"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/sign_in_password"
-                android:layout_marginTop="20dp"
+                android:layout_below="@id/sign_up_password"
+                android:layout_marginTop="30dp"
                 android:background="@drawable/buttons_background"
                 android:text="@string/register"
                 android:textColor="@android:color/white" />
