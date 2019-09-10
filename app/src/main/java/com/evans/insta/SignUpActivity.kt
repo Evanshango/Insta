@@ -54,7 +54,7 @@ class SignUpActivity : AppCompatActivity() {
             }
             else -> {
                 val mDialog = ProgressDialog(this@SignUpActivity)
-                mDialog.setTitle("Sign Up")
+                mDialog.setTitle("Signing Up")
                 mDialog.setMessage("Please wait...")
                 mDialog.setCanceledOnTouchOutside(false)
                 mDialog.show()
@@ -82,8 +82,8 @@ class SignUpActivity : AppCompatActivity() {
 
         val userMap = HashMap<String, Any>()
         userMap["uid"] = currentUserId
-        userMap["fullName"] = fullName
-        userMap["userName"] = userName
+        userMap["fullName"] = fullName.toLowerCase(Locale.getDefault())
+        userMap["userName"] = userName.toLowerCase(Locale.getDefault())
         userMap["email"] = email
         userMap["bio"] = "Hey there, I am new here"
         userMap["image"] = "https://firebasestorage.googleapis.com/v0/b/insta-f9032.appspot.com/o/account.png?alt=media&token=42b49082-fc38-4bed-83dc-3fa6acb9741c"

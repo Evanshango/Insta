@@ -35,4 +35,6 @@
     <string name="need_an_account">Need an Account? Sign Up</string>
     <string name="already_have_an_account_sign_in">Already have an Account? Sign In</string>
     <string name="register">Register</string>
+    <string name="search">Search...</string>
+    <string name="follow">Follow</string>
 </resources>

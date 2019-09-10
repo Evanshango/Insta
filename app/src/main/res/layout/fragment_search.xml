@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                xmlns:tools="http://schemas.android.com/tools"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent" xmlns:app="http://schemas.android.com/apk/res-auto"
-                tools:context=".fragments.SearchFragment">
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".fragments.SearchFragment">
 
     <com.google.android.material.appbar.AppBarLayout
             android:id="@+id/app_bar_layout_search"
@@ -20,14 +20,20 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
-                <androidx.appcompat.widget.SearchView
-                        android:id="@+id/search_view"
+                <ImageView
+                        android:id="@+id/search_icon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/ic_search" />
+
+                <EditText
+                        android:id="@+id/search_edit_text"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        app:queryHint="Search...">
-
-                </androidx.appcompat.widget.SearchView>
-
+                        android:layout_toEndOf="@id/search_icon"
+                        android:inputType="text"
+                        android:hint="@string/search" />
             </RelativeLayout>
 
         </androidx.appcompat.widget.Toolbar>
@@ -38,7 +44,9 @@
             android:id="@+id/search_recycler_view"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/app_bar_layout_search">
+            android:visibility="gone"
+            android:layout_below="@id/app_bar_layout_search"
+            tools:listitem="@layout/user_item">
 
     </androidx.recyclerview.widget.RecyclerView>
 
