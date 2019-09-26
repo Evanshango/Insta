@@ -62,7 +62,6 @@ class SearchFragment : Fragment() {
                     searchUser(p0.toString().toLowerCase())
                 }
             }
-
         })
 
         return view
@@ -112,11 +111,9 @@ class SearchFragment : Fragment() {
                             mUser?.add(user)
                         }
                     }
-
                     userAdapter?.notifyDataSetChanged()
                 }
             }
         })
     }
-
 }
