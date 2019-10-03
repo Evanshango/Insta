@@ -8,8 +8,10 @@ import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
 import androidx.annotation.NonNull
+import androidx.fragment.app.FragmentActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.evans.insta.R
+import com.evans.insta.fragments.ProfileFragment
 import com.evans.insta.models.User
 import com.evans.insta.utils.GlideApp
 import com.google.firebase.auth.FirebaseAuth
@@ -43,6 +45,17 @@ class UserAdapter(
         holder.bind(user)
 
         checkFollowingStatus(user.getUid(), holder.follow)
+
+        holder.itemView.setOnClickListener {
+            val pref = mContext
+                .getSharedPreferences("PREFS", Context.MODE_PRIVATE).edit()
+            pref.putString("profileId", user.getUid())
+            pref.apply()
+
+            (mContext as FragmentActivity).supportFragmentManager.beginTransaction()
+                .replace(R.id.fragment_container, ProfileFragment())
+                .commit()
+        }
 
         holder.follow.setOnClickListener {
             if (holder.follow.text.toString() == "Follow") {
