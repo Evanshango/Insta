@@ -37,4 +37,5 @@
     <string name="register">Register</string>
     <string name="search">Search...</string>
     <string name="follow">Follow</string>
+    <string name="say_something_about_your_post">Say something about your post</string>
 </resources>
